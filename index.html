@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accounts Management Org Chart — Mall+</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #FEFBFD;
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .container {
+    max-width: 1100px;
+    width: 100%;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .title h1 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #3724ED;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .title .sub {
+    font-size: 13px;
+    color: #888;
+    font-weight: 400;
+  }
+
+  /* ─── TREE ─── */
+  .tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* level 1 — director */
+  .level-1 { display: flex; justify-content: center; width: 100%; }
+
+  /* level 2 — direct reports */
+  .level-2 {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    width: 100%;
+    position: relative;
+    padding-top: 0;
+  }
+
+  /* level 3 — under Sally */
+  .level-3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  /* ─── CARDS ─── */
+  .card {
+    background: white;
+    border-radius: 14px;
+    padding: 16px 28px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    border: 1.5px solid #E8E4ED;
+    min-width: 160px;
+    transition: box-shadow 0.2s;
+  }
+
+  .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
+
+  .card .name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1A1A2E;
+    white-space: nowrap;
+  }
+
+  .card .name.tbd {
+    color: #B0ABB8;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .card .role {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+  }
+
+  .card .category {
+    font-size: 10.5px;
+    color: #00AFA0;
+    font-weight: 500;
+    margin-top: 1px;
+    letter-spacing: 0.3px;
+  }
+
+  .card.director {
+    border-color: #3724ED;
+    border-width: 2px;
+    background: #F8F7FF;
+    padding: 18px 36px;
+  }
+
+  .card.director .name { font-size: 17px; color: #3724ED; }
+
+  .card.tbd-card {
+    border-style: dashed;
+    border-color: #CCC;
+    background: #FAFAFC;
+  }
+
+  .card.tbd-card .name { color: #B0ABB8; font-style: italic; font-weight: 400; }
+
+  .card.sally-card { border-color: #00AFA0; border-width: 2px; }
+
+  /* ─── CONNECTORS ─── */
+  .connector-down {
+    width: 2px;
+    height: 36px;
+    background: #D0CCD8;
+    margin: 0 auto;
+  }
+
+  .connector-horizontal-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .connector-horizontal {
+    position: absolute;
+    top: 0;
+    height: 2px;
+    background: #D0CCD8;
+  }
+
+  .connector-vertical-down {
+    width: 2px;
+    background: #D0CCD8;
+    margin: 0 auto;
+  }
+
+  /* ─── LEVEL WRAPPERS ─── */
+  .node-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .branch-row {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    position: relative;
+  }
+
+  .branch-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: #D0CCD8;
+  }
+
+  .branch-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 14px;
+    position: relative;
+  }
+
+  .branch-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 14px;
+    background: #D0CCD8;
+  }
+
+  /* Sally sub-branch */
+  .sub-branch {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    position: relative;
+    margin-top: 0;
+  }
+
+  .sub-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 14px;
+    position: relative;
+  }
+
+  .sub-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 14px;
+    background: #D0CCD8;
+  }
+
+  .sub-item .dotted-line {
+    border-left: 2px dashed #00AFA0;
+    height: 14px;
+    width: 0;
+    margin: 0 auto;
+  }
+
+  /* ─── DOTTED LINE LABEL ─── */
+  .dotted-label {
+    font-size: 10px;
+    color: #00AFA0;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 11px;
+    color: #B0ABB8;
+  }
+
+  .footer span { color: #3724ED; font-weight: 500; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 800px) {
+    .level-2 { flex-wrap: wrap; gap: 24px; }
+    .branch-row { flex-wrap: wrap; gap: 24px; }
+    .branch-row::before { display: none; }
+    .branch-item::before { display: none; }
+    .card { min-width: 130px; padding: 12px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="title">
+    <h1>Accounts Management Team</h1>
+    <div class="sub">Mall+ · July 2026</div>
+  </div>
+
+  <div class="tree">
+
+    <!-- LEVEL 1: Director -->
+    <div class="level-1">
+      <div class="node-wrapper">
+        <div class="card director">
+          <div class="name">Mhike Estipular</div>
+          <div class="role">Director, Accounts Management</div>
+        </div>
+        <div class="connector-down"></div>
+      </div>
+    </div>
+
+    <!-- Horizontal line spanning level 2 -->
+    <div class="connector-horizontal-wrapper">
+      <div class="connector-horizontal" style="width: 88%; left: 6%;"></div>
+    </div>
+
+    <!-- LEVEL 2: Direct Reports -->
+    <div class="level-2">
+      <!-- Sally -->
+      <div class="branch">
+        <div class="branch-item" style="padding-top: 0;">
+          <div class="connector-vertical-down" style="height: 14px;"></div>
+          <div class="card sally-card">
+            <div class="name">Sally Gardose</div>
+            <div class="role">Category Manager</div>
+            <div class="category">FA · FMCG · LS/GM</div>
+          </div>
+          <!-- dropdown to Merge -->
+          <div class="dotted-line"></div>
+          <div class="sub-item">
+            <div class="card" style="border-left: 3px dashed #00AFA0;">
+              <div class="name">Mergel Romero</div>
+              <div class="role">Jr. Category Manager</div>
+              <div class="category">EL &amp; HA</div>
+            </div>
+            <div class="dotted-label">functional authority</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TBD AM 1 -->
+      <div class="branch-item">
+        <div class="connector-vertical-down" style="height: 14px;"></div>
+        <div class="card tbd-card">
+          <div class="name tbd">[TBD]</div>
+          <div class="role">Account Manager</div>
+        </div>
+      </div>
+
+      <!-- TBD AM 2 -->
+      <div class="branch-item">
+        <div class="connector-vertical-down" style="height: 14px;"></div>
+        <div class="card tbd-card">
+          <div class="name tbd">[TBD]</div>
+          <div class="role">Account Manager</div>
+        </div>
+      </div>
+
+      <!-- Carlo Meguizo -->
+      <div class="branch-item">
+        <div class="connector-vertical-down" style="height: 14px;"></div>
+        <div class="card">
+          <div class="name">Carlo Meguizo</div>
+          <div class="role">Account Manager</div>
+        </div>
+      </div>
+
+      <!-- Jon Dexter Jacob -->
+      <div class="branch-item">
+        <div class="connector-vertical-down" style="height: 14px;"></div>
+        <div class="card">
+          <div class="name">Jon Dexter Jacob</div>
+          <div class="role">Account Manager</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <span>Mall+</span> · Accounts Management · Updated July 2026
+  </div>
+</div>
+</body>
+</html>
