@@ -4,12 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Accounts Management Org Chart — Mall+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f0f4f8;
+      font-family: 'Space Grotesk', 'Segoe UI', Arial, sans-serif;
+      background: #FEFBFD;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -25,15 +28,17 @@
     header h1 {
       font-size: 1.15rem;
       font-weight: 700;
-      color: #1a2e4a;
-      letter-spacing: 0.04em;
+      color: #3724ED;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
     header p {
-      font-size: 0.8rem;
-      color: #7a8ea0;
+      font-size: 0.78rem;
+      color: #00AFA0;
       margin-top: 4px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
     }
 
     .legend {
@@ -45,6 +50,7 @@
       align-items: center;
       flex-wrap: wrap;
       justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
     }
 
     .legend-item {
@@ -56,13 +62,13 @@
     .legend-solid {
       width: 36px;
       height: 2px;
-      background: #b0c4de;
+      background: #00AFA0;
     }
 
     .legend-dotted {
       width: 36px;
       height: 0;
-      border-top: 2px dashed #b0c4de;
+      border-top: 2px dashed #3724ED;
     }
 
     .legend-dashed-red {
@@ -81,6 +87,7 @@
       font-size: 0.72rem;
       color: #a0b0c0;
       text-align: center;
+      font-family: 'Space Grotesk', sans-serif;
     }
   </style>
 </head>
@@ -88,7 +95,7 @@
 
 <header>
   <h1>Accounts Management Team</h1>
-  <p>Mall+ powered by GCash &nbsp;·&nbsp; FinCom Technologies Inc.</p>
+  <p>Mall+ &nbsp;·&nbsp; FinCom Technologies Inc.</p>
 </header>
 
 <svg
@@ -96,146 +103,127 @@
   width="100%"
   style="max-width:1000px; display:block;"
   xmlns="http://www.w3.org/2000/svg"
-  font-family="'Segoe UI', Arial, sans-serif"
+  font-family="'Space Grotesk','Segoe UI',Arial,sans-serif"
 >
   <defs>
     <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="rgba(0,0,0,0.11)"/>
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="rgba(0,175,160,0.12)"/>
+    </filter>
+    <filter id="shadow-light" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="rgba(55,36,237,0.08)"/>
     </filter>
   </defs>
 
   <!-- ═══════════════════════════════════════ -->
   <!--  DIRECTOR — Mhike Estipular            -->
-  <!--  Box: x=360, y=28, w=240, h=68        -->
-  <!--  Center: x=480                        -->
+  <!--  Mall Teal (#00AFA0)                  -->
   <!-- ═══════════════════════════════════════ -->
-  <rect x="360" y="28" width="240" height="68" rx="12" fill="#1a2e4a" filter="url(#shadow)"/>
+  <rect x="360" y="28" width="240" height="68" rx="12" fill="#00AFA0" filter="url(#shadow)"/>
   <text x="480" y="54"  text-anchor="middle" fill="white" font-weight="700" font-size="15">Mhike Estipular</text>
-  <text x="480" y="72"  text-anchor="middle" fill="white" font-size="11" opacity="0.75">Director</text>
-  <text x="480" y="87"  text-anchor="middle" fill="white" font-size="11" opacity="0.75">Accounts Management</text>
+  <text x="480" y="72"  text-anchor="middle" fill="white" font-size="11" opacity="0.85">Director</text>
+  <text x="480" y="87"  text-anchor="middle" fill="white" font-size="11" opacity="0.85">Accounts Management</text>
 
   <!-- V-line: Director → fork -->
-  <line x1="480" y1="96" x2="480" y2="128" stroke="#b0c4de" stroke-width="2"/>
+  <line x1="480" y1="96" x2="480" y2="128" stroke="#00AFA0" stroke-width="2" opacity="0.4"/>
 
-  <!-- H-bar: Sally (center=240) → Mergel (center=720) -->
-  <line x1="240" y1="128" x2="720" y2="128" stroke="#b0c4de" stroke-width="2"/>
+  <!-- H-bar: Sally → Mergel -->
+  <line x1="240" y1="128" x2="720" y2="128" stroke="#00AFA0" stroke-width="2" opacity="0.4"/>
 
   <!-- V-line down to Sally -->
-  <line x1="240" y1="128" x2="240" y2="158" stroke="#b0c4de" stroke-width="2"/>
+  <line x1="240" y1="128" x2="240" y2="158" stroke="#00AFA0" stroke-width="2" opacity="0.4"/>
 
-  <!-- V-line down to Mergel (longer — lower level) -->
-  <line x1="720" y1="128" x2="720" y2="218" stroke="#b0c4de" stroke-width="2"/>
+  <!-- V-line down to Mergel -->
+  <line x1="720" y1="128" x2="720" y2="218" stroke="#00AFA0" stroke-width="2" opacity="0.4"/>
 
 
   <!-- ═══════════════════════════════════════ -->
   <!--  SALLY — Category Manager             -->
-  <!--  Box: x=135, y=158, w=210, h=72       -->
-  <!--  Center: x=240                        -->
+  <!--  Mall Blue (#3724ED)                  -->
   <!-- ═══════════════════════════════════════ -->
-  <rect x="135" y="158" width="210" height="72" rx="12" fill="#2563eb" filter="url(#shadow)"/>
-  <text x="240" y="184" text-anchor="middle" fill="white" font-weight="700" font-size="14">Sally Gardose</text>
-  <text x="240" y="201" text-anchor="middle" fill="white" font-size="10.5" opacity="0.9">Category Manager</text>
-  <text x="240" y="218" text-anchor="middle" fill="white" font-size="10"   opacity="0.80">FA, FMCG, LS/GM</text>
+  <rect x="135" y="158" width="210" height="72" rx="12" fill="#3724ED" filter="url(#shadow)"/>
+  <text x="240" y="184" text-anchor="middle" fill="white" font-weight="600" font-size="14">Sally Gardose</text>
+  <text x="240" y="201" text-anchor="middle" fill="white" font-size="10.5" opacity="0.85">Category Manager</text>
+  <text x="240" y="218" text-anchor="middle" fill="#FFC32E" font-size="10" font-weight="600" opacity="0.95">FA, FMCG, LS/GM</text>
 
 
   <!-- ═══════════════════════════════════════ -->
   <!--  MERGEL — Jr. Category Manager        -->
-  <!--  Box: x=615, y=218, w=210, h=72       -->
-  <!--  Center: x=720                        -->
+  <!--  Lighter teal variant                 -->
   <!-- ═══════════════════════════════════════ -->
-  <rect x="615" y="218" width="210" height="72" rx="12" fill="#4a86e8" filter="url(#shadow)"/>
-  <text x="720" y="244" text-anchor="middle" fill="white" font-weight="700" font-size="14">Mergel Romero</text>
-  <text x="720" y="261" text-anchor="middle" fill="white" font-size="10.5" opacity="0.9">Jr. Category Manager</text>
-  <text x="720" y="278" text-anchor="middle" fill="white" font-size="10"   opacity="0.80">EL &amp; HA</text>
+  <rect x="615" y="218" width="210" height="72" rx="12" fill="#00BFA0" filter="url(#shadow)"/>
+  <text x="720" y="244" text-anchor="middle" fill="white" font-weight="600" font-size="14">Mergel Romero</text>
+  <text x="720" y="261" text-anchor="middle" fill="white" font-size="10.5" opacity="0.85">Jr. Category Manager</text>
+  <text x="720" y="278" text-anchor="middle" fill="#FFC32E" font-size="10" font-weight="600" opacity="0.95">EL &amp; HA</text>
 
 
-  <!-- ═══════════════════════════════════════════════════════════════════ -->
-  <!--  DOTTED LINE: Sally → Mergel                                      -->
-  <!--  From right edge of Sally (x=345, mid-y=194)                     -->
-  <!--  Elbow at x=480 → Mergel left edge (x=615, mid-y=254)            -->
-  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!--  DOTTED LINE: Sally → Mergel                     -->
+  <!-- ═══════════════════════════════════════════════════ -->
   <path
     d="M345,194 L480,194 L480,254 L615,254"
     fill="none"
-    stroke="#b0c4de"
+    stroke="#3724ED"
     stroke-width="2"
     stroke-dasharray="6,4"
+    opacity="0.5"
   />
-  <!-- Arrow tip -->
-  <polygon points="615,254 607,250 607,258" fill="#b0c4de"/>
+  <polygon points="615,254 607,250 607,258" fill="#3724ED" opacity="0.5"/>
 
 
   <!-- ═══════════════════════════════════════ -->
-  <!--  AMs UNDER SALLY — 3 columns          -->
-  <!--  Sally bottom: y=230                  -->
-  <!--  Centers: x=90, x=240, x=390         -->
-  <!--  AM boxes: w=130, y=380, h=68       -->
-  <!--  Gaps: 20px each                     -->
+  <!--  AMs UNDER SALLY                      -->
   <!-- ═══════════════════════════════════════ -->
-
-  <!-- V-line from Sally bottom → H-bar -->
-  <line x1="240" y1="230" x2="240" y2="262" stroke="#b0c4de" stroke-width="2"/>
-  <!-- H-bar -->
-  <line x1="90" y1="262" x2="390" y2="262" stroke="#b0c4de" stroke-width="2"/>
-  <!-- V-lines down -->
-  <line x1="90" y1="262" x2="90" y2="380" stroke="#b0c4de" stroke-width="2"/>
-  <line x1="240" y1="262" x2="240" y2="380" stroke="#b0c4de" stroke-width="2"/>
-  <line x1="390" y1="262" x2="390" y2="380" stroke="#b0c4de" stroke-width="2"/>
+  <line x1="240" y1="230" x2="240" y2="262" stroke="#3724ED" stroke-width="2" opacity="0.35"/>
+  <line x1="90" y1="262" x2="390" y2="262" stroke="#3724ED" stroke-width="2" opacity="0.35"/>
+  <line x1="90" y1="262" x2="90" y2="380" stroke="#3724ED" stroke-width="2" opacity="0.35"/>
+  <line x1="240" y1="262" x2="240" y2="380" stroke="#3724ED" stroke-width="2" opacity="0.35"/>
+  <line x1="390" y1="262" x2="390" y2="380" stroke="#3724ED" stroke-width="2" opacity="0.35"/>
 
   <!-- Sally AM1 — [TBH] Fashion -->
-  <rect x="25" y="380" width="130" height="68" rx="10" fill="white" stroke="#bfd3f5" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow)"/>
+  <rect x="25" y="380" width="130" height="68" rx="10" fill="white" stroke="#00AFA0" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow-light)" opacity="0.7"/>
   <text x="90" y="404" text-anchor="middle" fill="#dc2626" font-weight="700" font-size="12">[TBH]</text>
-  <text x="90" y="419" text-anchor="middle" fill="#5a7089" font-size="10">Account Manager</text>
-  <text x="90" y="435" text-anchor="middle" fill="#5a7089" font-size="10" opacity="0.8">Fashion</text>
+  <text x="90" y="419" text-anchor="middle" fill="#5A7089" font-size="10">Account Manager</text>
+  <text x="90" y="435" text-anchor="middle" fill="#00AFA0" font-size="10" font-weight="600" opacity="0.85">Fashion</text>
 
   <!-- Sally AM2 — [TBH] FMCG -->
-  <rect x="175" y="380" width="130" height="68" rx="10" fill="white" stroke="#bfd3f5" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow)"/>
+  <rect x="175" y="380" width="130" height="68" rx="10" fill="white" stroke="#00AFA0" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow-light)" opacity="0.7"/>
   <text x="240" y="404" text-anchor="middle" fill="#dc2626" font-weight="700" font-size="12">[TBH]</text>
-  <text x="240" y="419" text-anchor="middle" fill="#5a7089" font-size="10">Account Manager</text>
-  <text x="240" y="435" text-anchor="middle" fill="#5a7089" font-size="10" opacity="0.8">FMCG</text>
+  <text x="240" y="419" text-anchor="middle" fill="#5A7089" font-size="10">Account Manager</text>
+  <text x="240" y="435" text-anchor="middle" fill="#00AFA0" font-size="10" font-weight="600" opacity="0.85">FMCG</text>
 
   <!-- Sally AM3 — [TBH] Lifestyle -->
-  <rect x="325" y="380" width="130" height="68" rx="10" fill="white" stroke="#bfd3f5" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow)"/>
+  <rect x="325" y="380" width="130" height="68" rx="10" fill="white" stroke="#00AFA0" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow-light)" opacity="0.7"/>
   <text x="390" y="404" text-anchor="middle" fill="#dc2626" font-weight="700" font-size="12">[TBH]</text>
-  <text x="390" y="419" text-anchor="middle" fill="#5a7089" font-size="10">Account Manager</text>
-  <text x="390" y="435" text-anchor="middle" fill="#5a7089" font-size="10" opacity="0.8">Lifestyle</text>
+  <text x="390" y="419" text-anchor="middle" fill="#5A7089" font-size="10">Account Manager</text>
+  <text x="390" y="435" text-anchor="middle" fill="#00AFA0" font-size="10" font-weight="600" opacity="0.85">Lifestyle</text>
 
 
   <!-- ═══════════════════════════════════════ -->
-  <!--  AMs UNDER MERGEL — 3 columns         -->
-  <!--  Mergel bottom: y=290                 -->
-  <!--  Centers: x=570, x=720, x=870        -->
-  <!--  AM boxes: w=130, y=380, h=68       -->
-  <!--  Order: Carlo - [TBH] - Jon Dexter  -->
-  <!--  Gaps: 20px each                     -->
+  <!--  AMs UNDER MERGEL                     -->
   <!-- ═══════════════════════════════════════ -->
-
-  <!-- V-line from Mergel bottom → H-bar -->
-  <line x1="720" y1="290" x2="720" y2="320" stroke="#b0c4de" stroke-width="2"/>
-  <!-- H-bar -->
-  <line x1="570" y1="320" x2="870" y2="320" stroke="#b0c4de" stroke-width="2"/>
-  <!-- V-lines down -->
-  <line x1="570" y1="320" x2="570" y2="380" stroke="#b0c4de" stroke-width="2"/>
-  <line x1="720" y1="320" x2="720" y2="380" stroke="#b0c4de" stroke-width="2"/>
-  <line x1="870" y1="320" x2="870" y2="380" stroke="#b0c4de" stroke-width="2"/>
+  <line x1="720" y1="290" x2="720" y2="320" stroke="#00AFA0" stroke-width="2" opacity="0.35"/>
+  <line x1="570" y1="320" x2="870" y2="320" stroke="#00AFA0" stroke-width="2" opacity="0.35"/>
+  <line x1="570" y1="320" x2="570" y2="380" stroke="#00AFA0" stroke-width="2" opacity="0.35"/>
+  <line x1="720" y1="320" x2="720" y2="380" stroke="#00AFA0" stroke-width="2" opacity="0.35"/>
+  <line x1="870" y1="320" x2="870" y2="380" stroke="#00AFA0" stroke-width="2" opacity="0.35"/>
 
   <!-- Mergel AM1 — Carlo Meguizo — Electronics -->
-  <rect x="505" y="380" width="130" height="68" rx="10" fill="white" stroke="#bfd3f5" stroke-width="2" filter="url(#shadow)"/>
-  <text x="570" y="404" text-anchor="middle" fill="#2563eb" font-weight="700" font-size="12">Carlo Meguizo</text>
-  <text x="570" y="419" text-anchor="middle" fill="#5a7089" font-size="10">Account Manager</text>
-  <text x="570" y="435" text-anchor="middle" fill="#5a7089" font-size="10" opacity="0.8">Electronics</text>
+  <rect x="505" y="380" width="130" height="68" rx="10" fill="white" stroke="#00AFA0" stroke-width="2" filter="url(#shadow-light)"/>
+  <text x="570" y="404" text-anchor="middle" fill="#3724ED" font-weight="700" font-size="12">Carlo Meguizo</text>
+  <text x="570" y="419" text-anchor="middle" fill="#5A7089" font-size="10">Account Manager</text>
+  <text x="570" y="435" text-anchor="middle" fill="#00AFA0" font-size="10" font-weight="600" opacity="0.85">Electronics</text>
 
-  <!-- Mergel AM2 — [TBH] — Electronics (between Carlo and Jon) -->
-  <rect x="655" y="380" width="130" height="68" rx="10" fill="white" stroke="#bfd3f5" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow)"/>
+  <!-- Mergel AM2 — [TBH] — Electronics -->
+  <rect x="655" y="380" width="130" height="68" rx="10" fill="white" stroke="#00AFA0" stroke-width="2" stroke-dasharray="6,3" filter="url(#shadow-light)" opacity="0.7"/>
   <text x="720" y="404" text-anchor="middle" fill="#dc2626" font-weight="700" font-size="12">[TBH]</text>
-  <text x="720" y="419" text-anchor="middle" fill="#5a7089" font-size="10">Account Manager</text>
-  <text x="720" y="435" text-anchor="middle" fill="#5a7089" font-size="10" opacity="0.8">Electronics</text>
+  <text x="720" y="419" text-anchor="middle" fill="#5A7089" font-size="10">Account Manager</text>
+  <text x="720" y="435" text-anchor="middle" fill="#00AFA0" font-size="10" font-weight="600" opacity="0.85">Electronics</text>
 
   <!-- Mergel AM3 — Jon Dexter Jacob — Home Appliances -->
-  <rect x="805" y="380" width="130" height="68" rx="10" fill="white" stroke="#bfd3f5" stroke-width="2" filter="url(#shadow)"/>
-  <text x="870" y="404" text-anchor="middle" fill="#2563eb" font-weight="700" font-size="12">Jon Dexter Jacob</text>
-  <text x="870" y="419" text-anchor="middle" fill="#5a7089" font-size="10">Account Manager</text>
-  <text x="870" y="435" text-anchor="middle" fill="#5a7089" font-size="10" opacity="0.8">Home Appliances</text>
+  <rect x="805" y="380" width="130" height="68" rx="10" fill="white" stroke="#00AFA0" stroke-width="2" filter="url(#shadow-light)"/>
+  <text x="870" y="404" text-anchor="middle" fill="#3724ED" font-weight="700" font-size="12">Jon Dexter Jacob</text>
+  <text x="870" y="419" text-anchor="middle" fill="#5A7089" font-size="10">Account Manager</text>
+  <text x="870" y="435" text-anchor="middle" fill="#00AFA0" font-size="10" font-weight="600" opacity="0.85">Home Appliances</text>
 
 </svg>
 
@@ -256,7 +244,7 @@
 </div>
 
 <footer>
-  Generated by Mhaik &nbsp;·&nbsp; AM AI &nbsp;·&nbsp; July 2026
+  Mall+ &nbsp;·&nbsp; Accounts Management &nbsp;·&nbsp; July 2026
 </footer>
 
 </body>
